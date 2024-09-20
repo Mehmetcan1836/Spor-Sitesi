@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+* {
+    
+    margin: 0;
+    padding: 0;
+}
+
+
+.container7 {
+    text-align: center;
+    background-image: url(img/bg.jpg);
+    height: 120vh;
+    background-size: 100% 100%;
+    padding: 15px;
+}
+
+
+.container {
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 60px;
+    box-shadow: 0 0 30px black;
+    position: sticky;
+}
+
+
+.container5 .navbar {
+    width: 100%;
+    height: 80px;
+    background: rgb(245, 245, 245);
+    position: fixed;
+}
+
+
+.logo {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.logo:hover {
+    filter: drop-shadow(0px 7px 100px black);
+    transition: 0.5s;
+}
+
+
+ul {
+    float: right;
+    margin-right: 20px;
+    user-select: none;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+    
+}
+
+
+ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: 0.5s;
+    user-select: none;
+}
+
+
+ul li a.active,
+ul li a:hover {
+    background-color: #DC143C;
+    color: white;
+    border-radius: 20px;
+}
+
+
+ul ol {
+    list-style: none;
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 100px;
+}
+
+ul .ol {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    font-family: sans-serif;
+    transition: 0.5s;
+    user-select: none;
+}
+.container .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    font-family: sans-serif;
+}
+
+.center{
+    width: 1384px;
+    height: 700px;
+    
+    margin-top: -160px;
+    background-size: 100% 100%;
+    background-image: url(img/bg.jpg);
+    border-radius: 10px;
+    
+}
+
+
+.center h1{
+    color: white;
+    margin-top: 180px;
+    padding-top: 200px;
+    font-size: 70px;
+    font-weight: bold;
+    width: 900px;  
+    text-align: center;
+
+}
+
+.center h2{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    width: 885px;
+    margin-top: 30px;
+    text-align: center;
+
+}
+
+.center .buttons{
+    margin: 70px 310px;
+}
+
+.buttons button{
+    height: 50px;
+    width: 250px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: #DC143C;
+    cursor: pointer;
+    outline: none;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+
+:disabled
+.buttons button:hover{
+    background: #f3f3f3;
+}
+
+
+.sayfa{
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    background-size: 100% 100%;
+}
+
+.sayfa .spor{
+    width: 100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.sayfa2 h1{
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.sayfa2 h2{
+    color: rgb(0, 0, 0);
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+.sayfa3 h3{
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding-top: 250px;
+}
+
+.sayfa5{
+    background-color:white ;
+    height: 200vh;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    background-size: 100% 100%;
+}
+
+.sayfa5 h3{
+    padding: 80px;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+.kutu{
+    width: 1200px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    background-color: white;
+}
+
+.post{
+    width: 45%;
+    overflow: hidden;
+    float: left;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    background-color: white;
+}
+
+.post:hover{
+    transition: 0.5s;
+    box-shadow: none;
+}
+
+.post img{
+    height: 350px;
+    width: 100%;
+}
+.post h2{
+    margin: 10px;
+    padding: 0 5px;
+    font-family: sans-serif;
+}
+
+.post p{
+    padding: 10px;
+}
+
+.post a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+@media screen and (max-width:680px)
+{
+    .post{
+        width: 96%;
+        margin: 2%;
+    }
+}
+
+.sayfa6 h5{
+    margin-top: 70px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.sayfa6 h1{
+    text-align: center;
+    margin-top: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.sayfa6 p{
+    text-align: center;
+    margin-top: 30px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.cyclingresim{
+    padding-top: 90px;
+}
+
+.posts{
+    padding-top: 10px;
+}
+
+.sayfa8{
+    background-color:white ;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    background-size: 100% 100%;
+}
+
+.sayfa9 h1{
+    padding-top: 10px;
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.container10{
+    width: 100%;
+    max-width: 1230px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.poste{
+    width: 47%;
+    height: 560px;
+    overflow: hidden;
+    float: left;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 9px gray;
+    background-color: white;
+}
+
+.poste:hover{
+    transition: 0.5s;
+    box-shadow: none;
+}
+
+.poste img{
+    height: 400px;
+    width: 100%;
+}
+.poste h2{
+    margin: 10px;
+    padding: 0 5px;
+    font-family: sans-serif;
+}
+
+.poste p{
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.ort{
+    background-image: url(img/bg.jpg);
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 1425px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 60px;
+    text-align: center;
+    
+}
+
+.ort h2{
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: black;
+}
+.ort p{
+    font-size: 18px;
+    padding: 5%;
+    color:rgba(0, 0, 0, 0.7);
+}
+.ort p:hover{
+    color: black;
+    transition: 0.5s;
+}
+
+.right{
+    margin: 100px;
+    padding: 10px;
+}
+
+.kullanicigiris{
+    width: 400px;
+    height: 400px;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0,  0, 0.19);
+    z-index: 1 ;
+    
+}
+
+.kullanicigiris h2{
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0,  0, 0.19);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.kullanicigiris label{
+    cursor: auto;
+    font-size: 20px;
+    display: block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.kullanicigiris input{
+    height: 20px;
+    border-radius: 10px;
+}
+
+.kullanicigiris button{
+    margin-top: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.home {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 190%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;
+  }
+  
+  .home-cubugu {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+  }
+  
+  .home-cubugu img {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  .posts:hover{
+    transition: 0.5s;
+    box-shadow: none;
+}
