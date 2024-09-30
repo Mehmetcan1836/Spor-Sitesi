@@ -111,7 +111,6 @@ ul .ol {
 .center{
     width: 1384px;
     height: 700px;
-    
     margin-top: -160px;
     background-size: 100% 100%;
     background-image: url(img/bg.jpg);
@@ -237,13 +236,12 @@ ul .ol {
     float: left;
     margin: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px gray;
     background-color: white;
 }
 
 .post:hover{
+    box-shadow: 0 0 10px gray;
     transition: 0.5s;
-    box-shadow: none;
 }
 
 .post img{
