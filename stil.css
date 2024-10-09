@@ -17,9 +17,12 @@
 
 .container {
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center the boxes horizontally */
+    margin: 0 auto; /* add this line to keep the container width */
     width: 100%;
     max-width: 1200px;
-    margin: auto;
     overflow: hidden;
     border-radius: 60px;
     box-shadow: 0 0 30px black;
@@ -39,7 +42,11 @@
     display: inline-block;
     width: 100px;
     height: 100px;
-    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center the boxes horizontally */
+    margin: 0 auto; /* add this line to keep the container width */
+    width: 100%; /* add this line to keep the container width */
 }
 
 .logo:hover {
@@ -109,17 +116,14 @@ ul .ol {
 }
 
 .center{
-    width: 1384px;
-    height: 1150px;
-    margin-top: -160px;
+    height: 950px;
     background-size: 100% 100%;
     background-image: url(img/bg.jpg);
     border-radius: 10px;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center; /* center the boxes horizontally */
     margin: 0 auto; /* add this line to keep the container width */
-    width: 100%; /* add this line to keep the container width */
+    width: 90%; /* add this line to keep the container width */
 }
 
 
@@ -131,6 +135,11 @@ ul .ol {
     font-weight: bold;
     width: 900px;  
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center the boxes horizontally */
+    margin: 0 auto; /* add this line to keep the container width */
+    width: 100%; /* add this line to keep the container width */
 
 }
 
@@ -141,11 +150,21 @@ ul .ol {
     width: 885px;
     margin-top: 30px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center the boxes horizontally */
+    margin: 0 auto; /* add this line to keep the container width */
+    width: 100%; /* add this line to keep the container width */
 
 }
 
 .center .buttons{
     margin: 70px 310px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center the boxes horizontally */
+    margin: 0 auto; /* add this line to keep the container width */
+    width: 100%; /* add this line to keep the container width */
 }
 
 .buttons button{
