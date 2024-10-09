@@ -229,9 +229,11 @@ ul .ol {
 .kutu{
     width: 1200px;
     max-width: 1200px;
-    margin: auto;
-    position: relative;
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto; /* add this line to keep the container width */
+    width: 100%; /* add this line to keep the container width */
 }
 
 .post{
