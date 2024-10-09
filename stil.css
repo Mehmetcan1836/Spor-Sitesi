@@ -110,12 +110,16 @@ ul .ol {
 
 .center{
     width: 1384px;
-    height: 700px;
+    height: 1150px;
     margin-top: -160px;
     background-size: 100% 100%;
     background-image: url(img/bg.jpg);
     border-radius: 10px;
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center the boxes horizontally */
+    margin: 0 auto; /* add this line to keep the container width */
+    width: 100%; /* add this line to keep the container width */
 }
 
 
