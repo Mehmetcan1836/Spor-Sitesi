@@ -30,7 +30,7 @@
 }
 
 
-.container5 .navbar {
+.container5{
     width: 100%;
     height: 80px;
     background: rgb(245, 245, 245);
@@ -45,76 +45,96 @@
 }
 
 
-.logo {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
+/* GENEL NAVBAR */
+.navbar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* center the boxes horizontally */
-    margin: 0 auto; /* add this line to keep the container width */
-    width: 100%; /* add this line to keep the container width */
-}
-
-.logo:hover {
-    filter: drop-shadow(0px 7px 100px black);
-    transition: 0.5s;
-}
-
-
-ul {
-    float: right;
-    margin-right: 20px;
-    user-select: none;
-    text-align: center;
-}
-
-ul li {
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 80px;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo img {
+    height: 84px;
+    width: auto;
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+  
+  .nav-links {
     list-style: none;
-    display: inline-block;
-    margin: 0 8px;
-    line-height: 80px;
-    
-}
-
-
-ul li a {
-    color: #000000;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-links li a {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration: none;
-    font-size: 16px;
-    padding: 5px 14px;
+    color: black;
     font-weight: bold;
-    font-family: sans-serif;
-    transition: 0.5s;
-    user-select: none;
-}
-
-
-ul li a.active,
-ul li a:hover {
+    transition: 0.3s;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
     background-color: #DC143C;
     color: white;
-    border-radius: 20px;
-}
+  }
+  
+  /* MOBİL STİL */
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transition: right 0.4s ease-in-out;
+    }
+  
+    .nav-links.active {
+      right: 0;
+    }
+  
+    .nav-links li a {
+      font-size: 20px;
+    }
+  }
+  
+  
+  
 
-
-ul ol {
-    list-style: none;
-    display: inline-block;
-    margin: 0 8px;
-    line-height: 100px;
-}
-
-ul .ol {
-    color: #000000;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 5px 10px;
-    font-family: sans-serif;
-    transition: 0.5s;
-    user-select: none;
-}
 .center {
+    margin: 10px;
     height: 100vh;
     background-image: url(img/bg.jpg);
     background-size: cover;
@@ -383,34 +403,42 @@ ul .ol {
     font-size: 15px;
 }
 
-.ort{
-    background-image: url(img/bg.jpg);
-    top: 50%;
-    left: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 1425px;
-    height: 500px;
-    background-color: white;
-    border-radius: 10px;
-    margin-top: 60px;
+.ort {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Dikey ortalama */
+    align-items: center;     /* Yatay ortalama */
     text-align: center;
     
+    
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    margin-top: 60px;
+    padding: 0 20px;
 }
 
-.ort h2{
-    padding-top: 20px;
+.ort h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 50px;
-    color: black;
+    color: white;
+    margin-bottom: 20px;
 }
-.ort p{
-    font-size: 18px;
-    padding: 5%;
-    color:rgba(0, 0, 0, 0.7);
+
+.ort p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    max-width: 800px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
 }
+
 .ort p:hover{
     color: black;
     transition: 0.5s;
@@ -570,3 +598,139 @@ ul .ol {
     font-weight: bold;
     margin-top: 10px;
 }
+/* Banner genel stil */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    background-color: #333;
+    color: white;
+    margin: 10px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* İçerik düzeni */
+.cookie-content {
+    max-width: 960px;
+    width: 100%;
+    text-align: center;
+}
+
+.cookie-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cookie-content a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.cookie-content a:hover {
+    text-decoration: underline;
+}
+
+/* Butonlar */
+.cookie-buttons {
+    margin-top: 10px;
+}
+
+.cookie-btn {
+    padding: 5px 5px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.cookie-btn.accept {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cookie-btn.accept:hover {
+    background-color: #45a049;
+}
+
+.cookie-btn.reject {
+    background-color: #f44336;
+    color: white;
+}
+
+.cookie-btn.reject:hover {
+    background-color: #e53935;
+}
+.baslık h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ucret {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.plan-box {
+    width: 220px;
+    height: 260px;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.plan-box h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.plan-box p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 25px;
+    padding: 0 5px;
+}
+
+.plan-box button {
+    background-color: #DC143C;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.plan-box button:hover {
+    background-color: #b01030;
+}
+
+/* Özel renk sınıfları */
+.bronze h2 { color: #cd7f32; }
+.iron h2 { color: #7a7a7a; }
+.gold h2 { color: #d4af37; }
+.diamond h2 { color: #00cfff; }
+.platinum h2 { color: #dfe6eb; }

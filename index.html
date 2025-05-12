@@ -7,26 +7,38 @@
     <title>THEGYM | Türkiye'nin Spor Sitesi</title>
     <link rel="stylesheet" href="stil.css">
     <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <br>
     <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.html">
-                <img src="img/logo.png" class="logo"></a>
-            </div>
-            <ul>
-                <li><a href="hareketlersayfası.html">Hareketler <i class=" fas fa-caret-down"></i></a></li>
-                <li><a href="hakkımızda.html">Hakkimizda</a></li>
-                <li><a href="hizmetler.html">Hizmetler</a></li>
-                <li><a href="iletişim.html">İletişim</a></li>
-                <li><a href="https://garemtal.meb.k12.tr" target=" _blank" >GARAMTEL</li></a>
-                <ol class="ol">|</ol>
-                <ol><a href="kullanıcıkayıt.html" class="ol">Kullanıcı Girişi</a></ol>
-                <li><a href="#" class="active">BİZE KATIL</a></li>
-            </ul>
+    <!-- Navbar Başlangıç -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo" class="logo-img">
+            </a>
         </div>
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- Menü Linkleri -->
+        <ul class="nav-links">
+            <li><a href="hareketlersayfası.html">Hareketler <i class="fas fa-caret-down"></i></a></li>
+            <li><a href="hakkımızda.html">Hakkımızda</a></li>
+            <li><a href="hizmetler.html">Hizmetler</a></li>
+            <li><a href="iletişim.html">İletişim</a></li>
+            <li><a href="https://garemtal.meb.k12.tr" target="_blank" class="active">GARAMTEL</a></li>
+            <ol class="ol">|</ol>
+            <li><a href="kullanıcıkayıt.html" >Kullanıcı Girişi</a></li>
+            <li><a href="#" class="active">BİZE KATIL</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar Son -->
+
         
         <div class="home">
             <div class="home-cubugu">
@@ -61,13 +73,39 @@
 <hr style="display: flex;flex-wrap: wrap;justify-content: center;margin: 0 auto;width: 70%;"><br><br>
 <div class="baslık"><h1>ÜCRET TABLOSU</h1></div>
 <div class="ucret">
-    
-    <div class="box1"><b style="color: brown;">BRONZ</b><h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, at!</h6><a href="kullanıcıkayıt.html"><p style="background-color: brown;">100TL</p></a></div>
-    <div class="box1"><b style="color: rgb(153, 153, 153);">DEMİR</b><h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, at!</h6><a href="kullanıcıkayıt.html"><p style="background-color: rgb(153, 153, 153);">100TL</p></a></div>
-    <div class="box1"><b style="color: rgb(197, 190, 83);">ALTIN</b><h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, at!</h6><a href="kullanıcıkayıt.html"><p style="background-color: rgb(255, 244, 92);">100TL</p></a></div>
-    <div class="box1"><b style="color: rgb(96, 221, 238);">ELMAS</b><h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, at!</h6><a href="kullanıcıkayıt.html"><p style="background-color: rgb(96, 221, 238);">100TL</p></a></div>
-    <div class="box1"><b style="color: #dfe6eb;">PLATİN</b><h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, at!</h6><a href="kullanıcıkayıt.html"><p style="background-color: #dfe6eb;">100TL</p></a></div>
-  </div>
+
+    <div class="plan-box bronze">
+        <h2>🥉 Bronz</h2>
+        <p>Başlangıç seviyesi için ideal antrenman programı.</p>
+        <a href="kullanıcıkayıt.html"><button>100 TL</button></a>
+    </div>
+
+    <div class="plan-box iron">
+        <h2>⛓️ Demir</h2>
+        <p>Güç kazanmak isteyenler için temel düzey paket.</p>
+        <a href="kullanıcıkayıt.html"><button>150 TL</button></a>
+    </div>
+
+    <div class="plan-box gold">
+        <h2>🥇 Altın</h2>
+        <p>Kardiyo + kuvvet antrenmanlarını kapsayan paket.</p>
+        <a href="kullanıcıkayıt.html"><button>200 TL</button></a>
+    </div>
+
+    <div class="plan-box diamond">
+        <h2>💎 Elmas</h2>
+        <p>Kişisel antrenör destekli premium spor paketi.</p>
+        <a href="kullanıcıkayıt.html"><button>300 TL</button></a>
+    </div>
+
+    <div class="plan-box platinum">
+        <h2>⚪ Platin</h2>
+        <p>VIP salon erişimi, özel dersler ve diyetisyen desteği.</p>
+        <a href="kullanıcıkayıt.html"><button>500 TL</button></a>
+    </div>
+
+</div>
+
 
 <br><br><br><br><br>
 
@@ -101,5 +139,30 @@
 
   
 </div>
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+        <p>
+            Sitemizi kullanarak çerezleri kabul etmiş oluyorsunuz. <a href="/cerez-politikasi">Çerez Politikamızı</a> inceleyebilirsiniz.
+        </p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="cookie-btn accept">Kabul Et</button>
+            <button id="reject-cookies" class="cookie-btn reject">Reddet</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Burada çerez kabul işlemi yapılabilir
+    });
+
+    document.getElementById('reject-cookies').addEventListener('click', function() {
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Burada çerez reddetme işlemi yapılabilir
+    });
+</script>
+
+<script src="script.js"></script>  
 </body>
 </html>
