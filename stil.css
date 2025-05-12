@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 * {
-    
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Bu özellik tüm öğelerin doğru şekilde boyutlandırılmasını sağlar */
 }
+
 
 
 .container7 {
@@ -16,18 +17,15 @@
 
 
 .container {
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* center the boxes horizontally */
-    margin: 0 auto; /* add this line to keep the container width */
-    width: 100%;
-    max-width: 1200px;
-    overflow: hidden;
+    width: 100%; /* %100 genişlik, ancak dışarı taşması önlenmeli */
+    max-width: 1200px; /* Max genişlik tanımlanmış, bu sayede sabit genişlik sağlanır */
+    margin: 0 auto; /* Bu, container'ı ortalar */
+    overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
     border-radius: 60px;
     box-shadow: 0 0 30px black;
     position: sticky;
 }
+
 
 
 .container5{
@@ -52,11 +50,12 @@
     align-items: center;
     background-color: white;
     height: 80px;
-    padding: 0 20px;
+    padding: 0 20px; /* Bu değerleri azaltarak boşluğu küçültebilirsiniz */
     position: sticky;
     top: 0;
     z-index: 999;
-  }
+}
+
   
   .logo img {
     height: 84px;
