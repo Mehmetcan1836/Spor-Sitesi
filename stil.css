@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Bu özellik tüm öğelerin doğru şekilde boyutlandırılmasını sağlar */
+    box-sizing: border-box;
 }
 
 
@@ -18,10 +18,10 @@
 
 
 .container {
-    width: 100%; /* %100 genişlik, ancak dışarı taşması önlenmeli */
-    max-width: 1200px; /* Max genişlik tanımlanmış, bu sayede sabit genişlik sağlanır */
-    margin: 0 auto; /* Bu, container'ı ortalar */
-    overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    overflow: hidden; 
     border-radius: 60px;
     box-shadow: 0 0 30px black;
     position: sticky;
@@ -36,11 +36,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* her şeyin üstünde olsun */
+    z-index: 1000; 
     display: flex;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* hafif gölge */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 
 
@@ -51,7 +51,7 @@
     align-items: center;
     background-color: white;
     height: 80px;
-    padding: 0 20px; /* Bu değerleri azaltarak boşluğu küçültebilirsiniz */
+    padding: 0 20px; 
     position: sticky;
     top: 0;
     z-index: 999;
@@ -271,8 +271,8 @@
 .kutu{
     max-width: 1200px;
     background-color: white;
-    margin: 0 auto; /* add this line to keep the container width */
-    width: 100%; /* add this line to keep the container width */
+    margin: 0 auto;
+    width: 100%; 
 }
 
 .post{
@@ -352,7 +352,6 @@
     background-color: white;
     padding: 40px 10px;
     background-size: 100% 100%;
-    /* height: 100vh; => BUNU SİL ya da yorum satırı yap */
 }
 
 
@@ -361,9 +360,9 @@
     font-size: 50px;
     font-family: sans-serif;
     font-weight: bold;
-    display: flex;               /* Flexbox kullanıyoruz */
-    justify-content: center;     /* Yatayda ortalar */
-    align-items: center;         /* Dikeyde ortalar */              /* Yükseklik %100 görünüm yüksekliği */
+    display: flex;               
+    justify-content: center;     
+    align-items: center;         
     text-align: center; 
 }
 
@@ -411,8 +410,8 @@
 .ort {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Dikey ortalama */
-    align-items: center;     /* Yatay ortalama */
+    justify-content: center; 
+    align-items: center;     
     text-align: center;
     
     
@@ -456,8 +455,8 @@
 
 .kullanicigiris {
     width: 100%;
-    max-width: 450px; /* Formun genişliği çok büyük olmasın */
-    height: auto; /* Yükseklik içeriğe göre ayarlansın */
+    max-width: 450px;
+    height: auto;
     display: block;
     margin: auto;
     padding: 20px;
@@ -468,67 +467,67 @@
 }
 
 .kullanicigiris h2 {
-    font-size: 28px; /* Daha uygun bir yazı boyutu */
+    font-size: 28px;
     color: rgb(0, 0, 0);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: center; /* Başlığı ortalayalım */
-    margin-bottom: 20px; /* Başlık ile form arasına boşluk ekleyelim */
+    text-align: center;
+    margin-bottom: 20px; 
 }
 
 .kullanicigiris label {
     font-size: 18px;
     display: block;
-    margin-bottom: 5px; /* Etiket ile input arasında boşluk olsun */
+    margin-bottom: 5px; 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .kullanicigiris input {
-    width: 100%; /* Genişlik %100, her ekran boyutunda tam genişlikte olacak */
-    height: 40px; /* Yükseklik arttırıldı */
-    margin-bottom: 15px; /* Input alanları arasına boşluk ekledik */
+    width: 100%; 
+    height: 40px;
+    margin-bottom: 15px; 
     padding: 10px;
-    font-size: 16px; /* Yazı boyutunu uyumlu hale getirelim */
+    font-size: 16px; 
     border-radius: 10px;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* Kenar çerçevelerinin de hesaplanmasını sağlar */
+    box-sizing: border-box; 
 }
 
 .kullanicigiris button {
-    width: 100%; /* Buton genişliği de input gibi %100 olmalı */
-    padding: 15px; /* Buton boyutunu büyütelim */
-    font-size: 18px; /* Yazı boyutunu uygun hale getirelim */
-    background-color: #DC143C; /* Buton rengi */
+    width: 100%; 
+    padding: 15px;
+    font-size: 18px; 
+    background-color: #DC143C;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Geçiş efekti ekleyelim */
+    transition: background-color 0.3s ease;
 }
 
 .kullanicigiris button:hover {
-    background-color: #b01030; /* Hover efekti ile renk değişimi */
+    background-color: #b01030;
 }
 
 @media screen and (max-width: 768px) {
     .kullanicigiris {
-        padding: 15px; /* Mobil cihazlar için padding küçültülür */
+        padding: 15px; 
     }
 
     .kullanicigiris h2 {
-        font-size: 24px; /* Başlık boyutunu mobilde küçültüyoruz */
+        font-size: 24px;
     }
 
     .kullanicigiris label {
-        font-size: 16px; /* Etiket boyutunu da mobilde küçültüyoruz */
+        font-size: 16px; 
     }
 
     .kullanicigiris input {
-        height: 35px; /* Mobilde input boyutunu küçültüyoruz */
+        height: 35px; 
     }
 
     .kullanicigiris button {
-        padding: 12px; /* Mobilde buton boyutunu biraz küçültüyoruz */
-        font-size: 16px; /* Yazı boyutunu uyarlıyoruz */
+        padding: 12px; 
+        font-size: 16px; 
     }
 }
 
@@ -572,14 +571,14 @@
     
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* center the boxes horizontally */
-    margin: 0 auto; /* add this line to keep the container width */
-    width: 100%; /* add this line to keep the container width */
+    justify-content: center; 
+    margin: 0 auto; 
+    width: 100%; 
   }
   
   .box1 {
-    width: 200px; /* set a fixed width for each box */
-    height: 300px; /* set a fixed height for each box */
+    width: 200px; 
+    height: 300px; 
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     margin: 10px;
@@ -611,7 +610,7 @@
   .baslık{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* center the boxes horizontally */
+    justify-content: center; 
     margin: 0 auto;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
@@ -619,19 +618,19 @@
     background: url(img/banner1.webp);
     height: 600px;
     width: 100%;
-    background-size: cover; /* Resmi tam ekran boyutunda yapar */
-    background-position: center; /* Resmin ortalanmasını sağlar */
-    position: relative; /* İçerideki yazının doğru yerleşebilmesi için */
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
 }
 
 .banner-text {
-    position: absolute; /* Yazıyı resmin üstüne yerleştirebilmek için */
-    top: 50%; /* Yükseklik olarak tam ortada */
-    left: 50%; /* Enlemesine tam ortada */
-    transform: translate(-50%, -50%); /* Ortalamayı yapar */
-    text-align: center; /* Yazıyı ortalar */
-    color: white; /* Yazının rengini beyaz yapar */
-    width: 80%; /* Yazı kutusunun genişliğini %80 yapar */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
 }
 
 .banner-text h1 {
@@ -783,3 +782,16 @@
 .gold h2 { color: #d4af37; }
 .diamond h2 { color: #00cfff; }
 .platinum h2 { color: #dfe6eb; }
+
+.postes{
+    width: 47%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+    margin: 15px;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 9px gray;
+    background-color: white;
+}

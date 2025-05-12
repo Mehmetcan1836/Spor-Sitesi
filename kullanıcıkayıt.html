@@ -17,13 +17,13 @@
                         <img src="img/logo.png" alt="Logo" class="logo-img">
                     </a>
                 </div>
-                <!-- Hamburger Menü -->
+                
                 <div class="menu-toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-                <!-- Menü Linkleri -->
+                
                 <ul class="nav-links">
                     <li><a href="hareketlersayfası.html">Hareketler <i class="fas fa-caret-down"></i></a></li>
                     <li><a href="hakkımızda.html">Hakkımızda</a></li>
@@ -81,7 +81,7 @@
                 ? "Hesabın yok mu?"
                 : "Zaten hesabın var mı?";
 
-            // Kayıt modundaysa ad soyad alanını göster, değilse gizle
+            
             document.getElementById("name").style.display = isLoginMode ? "none" : "block";
         }
 
@@ -93,7 +93,7 @@
             const password = document.getElementById("password").value;
 
             if (isLoginMode) {
-                // GİRİŞ
+                
                 const savedUser = JSON.parse(localStorage.getItem("user"));
                 if (savedUser && savedUser.email === email && savedUser.password === password) {
                     alert("Giriş başarılı! Hoş geldin " + savedUser.name);
@@ -101,14 +101,14 @@
                     alert("Email veya şifre hatalı!");
                 }
             } else {
-                // KAYIT
+                
                 const user = { name, email, password };
                 localStorage.setItem("user", JSON.stringify(user));
                 alert("Kayıt başarılı! Giriş yapabilirsiniz.");
                 toggleMode();
             }
 
-            // Formu temizle
+            
             document.getElementById("userForm").reset();
         });
     </script>
