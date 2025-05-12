@@ -448,41 +448,84 @@
     padding: 10px;
 }
 
-.kullanicigiris{
-    width: 400px;
-    height: 400px;
+.kullanicigiris {
+    width: 100%;
+    max-width: 450px; /* Formun genişliği çok büyük olmasın */
+    height: auto; /* Yükseklik içeriğe göre ayarlansın */
     display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0,  0, 0.19);
-    z-index: 1 ;
-    
-}
-
-.kullanicigiris h2{
-    font-size: 40px;
-    color: rgb(0, 0, 0);
-    width: 200px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0,  0, 0.19);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.kullanicigiris label{
-    cursor: auto;
-    font-size: 20px;
-    display: block;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.kullanicigiris input{
-    height: 20px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    background-color: #fff;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
-.kullanicigiris button{
-    margin-top: 5px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+.kullanicigiris h2 {
+    font-size: 28px; /* Daha uygun bir yazı boyutu */
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center; /* Başlığı ortalayalım */
+    margin-bottom: 20px; /* Başlık ile form arasına boşluk ekleyelim */
 }
+
+.kullanicigiris label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px; /* Etiket ile input arasında boşluk olsun */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.kullanicigiris input {
+    width: 100%; /* Genişlik %100, her ekran boyutunda tam genişlikte olacak */
+    height: 40px; /* Yükseklik arttırıldı */
+    margin-bottom: 15px; /* Input alanları arasına boşluk ekledik */
+    padding: 10px;
+    font-size: 16px; /* Yazı boyutunu uyumlu hale getirelim */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Kenar çerçevelerinin de hesaplanmasını sağlar */
+}
+
+.kullanicigiris button {
+    width: 100%; /* Buton genişliği de input gibi %100 olmalı */
+    padding: 15px; /* Buton boyutunu büyütelim */
+    font-size: 18px; /* Yazı boyutunu uygun hale getirelim */
+    background-color: #DC143C; /* Buton rengi */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Geçiş efekti ekleyelim */
+}
+
+.kullanicigiris button:hover {
+    background-color: #b01030; /* Hover efekti ile renk değişimi */
+}
+
+@media screen and (max-width: 768px) {
+    .kullanicigiris {
+        padding: 15px; /* Mobil cihazlar için padding küçültülür */
+    }
+
+    .kullanicigiris h2 {
+        font-size: 24px; /* Başlık boyutunu mobilde küçültüyoruz */
+    }
+
+    .kullanicigiris label {
+        font-size: 16px; /* Etiket boyutunu da mobilde küçültüyoruz */
+    }
+
+    .kullanicigiris input {
+        height: 35px; /* Mobilde input boyutunu küçültüyoruz */
+    }
+
+    .kullanicigiris button {
+        padding: 12px; /* Mobilde buton boyutunu biraz küçültüyoruz */
+        font-size: 16px; /* Yazı boyutunu uyarlıyoruz */
+    }
+}
+
 
 .home {
     position: fixed;
