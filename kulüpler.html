@@ -9,6 +9,63 @@
     <link rel="icon" type="image/png" href="img/logo.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+<style>
+    .filter-bar {
+    margin: 70px;
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-bar select,
+.filter-bar input {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.map-view {
+  margin-left: auto;
+  padding: 10px;
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.gym-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gym-card {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: calc(50% - 10px);
+  padding-bottom: 20px;
+}
+
+.gym-card img {
+  width: 100%;
+  height: auto;
+}
+
+.gym-card h3 {
+  padding: 10px 20px 0;
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.detail-link {
+  color: red;
+  font-weight: bold;
+  padding: 0 20px;
+}
+</style>
 <body>
     <br>
     <div class="container">
@@ -48,196 +105,180 @@
         </div> 
 </div>
 
-<div class="center">
-    <h1>SADECE SPORA DEĞİL, KENDİNE GELDİĞİN YER.</h1>
-    <h2>Sen de bize katıl, iyi yaşamaya başla.</h2>
-    <div class="buttons">
-        <a href="#"><button>BİZE KATIL</button></a>
-    </div>
-</div>
+<div class="filter-bar">
+    <select><option>Tüm Şehirler</option></select>
+    <select><option>Tüm İlçeler</option></select>
+    <select><option>Tüm İmkanlar</option></select>
+    <select><option>Tüm Kulüpler</option></select>
+    <input type="text" placeholder="Kulüp Adı">
+    <a href="#" class="map-view">📍 HARİTA GÖRÜNÜMÜ</a>
+  </div>
 
-<br><br><br>
-<div class="sayfa">
-    <div class="spor">
-        <img src="img/spor.png" class="spor">
-    </div>
-    <div class="sayfa2">
-        
-        <h1>
-            İYİ YAŞAMAYA VE SPORA DAİR <br>ARADIĞIN HER ŞEY BURADA!
-        </h1>
-        <h2>En yeni teknolojiler ve spor ekipmanlarıyla, spor deneyimini bir adım ileri taşı! <br>
-            Profesyonel eğitmenler ile birlikte antrenman yap, en yüksek verimi al. <br>
-            İster kulüpte ister açık havada hayalindeki sağlıklı ve fit yaşam için <br>
-            Mars Athletic her zaman seninle.</h2>
-        <div class="photo-container">
-    <div class="photo">
-        <img src="img/Kulüp.webp" alt="">
-        <h3>Kulüp Etkinlikleri</h3>
-        <p>Üniversite kulüplerinde sosyal ve kültürel aktiviteler.</p>
-    </div>
-    <div class="photo">
-        <img src="img/Her-yerde-spor.webp" alt="">
-        <h3>Her Yerde Spor</h3>
-        <p>Her kampüste spor yapma imkânı.</p>
-    </div>
-    <div class="photo">
-        <img src="img/topluluk.webp" alt="">
-        <h3>Topluluklar</h3>
-        <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
-    </div>
-</div>
-
-</div><br><br><br><br>
-<hr style="display: flex;flex-wrap: wrap;justify-content: center;margin: 0 auto;width: 70%;"><br><br>
-<div class="kulupvestudyolaryazı">
-<p>KULÜP VE STÜDYOLAR</p>
-    <h3>YAŞAM TARZINLA UYUMLU KULÜP VE <br> STÜDYOLAR</h3>
-    <button>KULÜPLERİ İNCELE</button>
+<div class="sporsalonları">
+    <h3>SPOR SALONLARI VE STÜDYOLAR</h3>
 </div>
 <div class="kulupvestudyolar">
     
     <div class="photoss">
+        <a href="">
         <img src="img/macone.webp" alt="">
-        <h3>Topluluklar</h3>
-        <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
-        <a href="#">En Yakın Kulübü Bul</a>
+        <h3>ADANA 01 BURDA</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
     <div class="photoss">
+        <a href="">
         <img src="img/macfit.webp" alt="">
-        <h3>Topluluklar</h3>
-        <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
-        <a href="#">En Yakın Kulübü Bul</a>
+        <h3>ADANA OPTIMUM</h3>
+        <a href="#">SPOR SALONU DETAYIl</a>
     </div>
     <div class="photoss">
+        <a href="">
         <img src="img/mac_boxing.webp" alt="">
-        <h3>Topluluklar</h3>
-        <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
-        <a href="#">En Yakın Kulübü Bul</a>
+        <h3>365 AVM</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
     <div class="photoss">
+        <a href="">
         <img src="img/mac_hiit.webp" alt="">
-        <h3>Topluluklar</h3>
-        <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
-        <a href="#">En Yakın Kulübü Bul</a>
+        <h3>BALGAT NEV 201</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
     <div class="photoss">
+        <a href="">
         <img src="img/MACStudio_Pilates.webp" alt="">
-        <h3>Topluluklar</h3>
-        <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
-        <a href="#">En Yakın Kulübü Bul</a>
+        <h3>CEPA</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
     <div class="photoss">
+        <a href="">
         <img src="img/MACStudio_Beach.webp" alt="">
-        <h3>Topluluklar</h3>
-        <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
-        <a href="#">En Yakın Kulübü Bul</a>
+        <h3>GORDION</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-
-</div>
-<div class="thegymmobil">
-    <div class="thegymyazi">
-    <p>THEGYM+ MOBİL İLE HER YERDE SPOR</p>
-    <h3>THEGYM+ İLE SPOR HER ZAMAN YANINDA!</h3>
-    <button>UYGULAMAYI KEŞFET</button></div>
-    <div class="macplus-container">
-    <div class="macplus-text">
-        <div class="macplus-box" data-image="img/macplus2.jpg">
-            <h3>THEGYM+ ile Benzersiz Bir Spor Deneyimi Seni Bekliyor!</h3>
-            <p>Hayatının her anında spora, fit olmaya ve iyi yaşamaya inanıyorsan doğru yerdesin.</p>
-        </div>
-        <div class="macplus-box" data-image="img/macplus1.jpg">
-            <h3>Geniş Egzersiz Kütüphanesi</h3>
-            <p>Yüzlerce THEGYM+ içeriği keşfetmen için seni bekliyor. Sana en uygun içeriği seç ve hedeflerine kolayca ulaş!</p>
-        </div>
-        <div class="macplus-box" data-image="img/macplus3.jpg">
-            <h3>Antrenman Programları</h3>
-            <p><strong>Her hedefe ve seviyeye özel antrenman programları THEGYM+ ile seninle.</strong> Dilersen günlük antrenmanlar, dilersen hedefe yönelik programlar ile hedeflerine çok yakınsın.</p>
-        </div>
-        <div class="macplus-stores">
-            <a href="https://www.apple.com/tr/app-store/" target="_blank">
-            <img src="img/appstore.png"  alt="App Store" /></a>
-            <a href="https://play.google.com/store/apps?hl=tr" target="_blank">
-            <img src="img/googleplay.png" alt="Google Play" /></a>
-        </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>KONUTKENT</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-    <div class="macplus-phone-frame">
-        <img src="img/frame.webp" alt="Telefon Çerçevesi" class="phone-frame" />
-        <img id="macplusScreenImage" src="img/macplus2.jpg" alt="MAC Plus Ekran" class="screen-image" />
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>PANORA</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-</div>
-
-
-
-
-</div>
-
-
-<div class="baslık"><h1>ÜCRET TABLOSU</h1></div>
-<div class="ucret">
-
-    <div class="plan-box bronze">
-        <h2>🥉 Bronz</h2>
-        <p>Başlangıç seviyesi için ideal antrenman programı.</p>
-        <a href="kullanıcıkayıt.html"><button>100 TL</button></a>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>TUNALI</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-
-    <div class="plan-box iron">
-        <h2>⛓️ Demir</h2>
-        <p>Güç kazanmak isteyenler için temel düzey paket.</p>
-        <a href="kullanıcıkayıt.html"><button>150 TL</button></a>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>GORDION</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-
-    <div class="plan-box gold">
-        <h2>🥇 Altın</h2>
-        <p>Kardiyo + kuvvet antrenmanlarını kapsayan paket.</p>
-        <a href="kullanıcıkayıt.html"><button>200 TL</button></a>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>YAŞAMKENT</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-
-    <div class="plan-box diamond">
-        <h2>💎 Elmas</h2>
-        <p>Kişisel antrenör destekli premium spor paketi.</p>
-        <a href="kullanıcıkayıt.html"><button>300 TL</button></a>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>ERYAMAN</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-
-    <div class="plan-box platinum">
-        <h2>⚪ Platin</h2>
-        <p>VIP salon erişimi, özel dersler ve diyetisyen desteği.</p>
-        <a href="kullanıcıkayıt.html"><button>500 TL</button></a>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>ETLİK</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
     </div>
-
-</div>
-
-
-<br><br><br><br><br>
-
-<div class="posts">
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>NATA VEGA</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>ANKAMALL</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>ARMADA</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>PODIUM</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>ANTALYA ERASTA</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>ANTALYA LARA CARREFOUR</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>MARKANTALYA</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>BURSA ÖZLÜCE</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>BURSA PODYUMPARK</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>DENİZLİ TERASPARK</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>FORUM DİYARBAKIR</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>EDİRNE MARGİ</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
+    <div class="photoss">
+        <a href="">
+        <img src="img/MACStudio_Beach.webp" alt="">
+        <h3>ESKİŞEHİR</h3>
+        <a href="#">SPOR SALONU DETAYI</a>
+    </div>
     
-<div class="kutu">
-    <center>
-    <h2 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: bold; padding: 16px; border-bottom: 3px solid black;">Önerilen Hareketler</h2></center>
-    <div class="post">
-        <a href="kuvvetsayfa.html">
-        <img src="img/kuvvet.jpg">
-        <h2>Kuvvet</h2>
-        <p>Kas geliştirmek için nasıl bir programa dahil olacağından emin değilsen kuvvet grup
-            dersleri ile tanışma zamanı. Tüm vücut kaslarının güçlenmesi, daha sağlıklı bir duruşa
-            sahip olmak ve performansını artırmak için kuvvet grup derslerinden
-            faydalanabilirsin</p></a>
 
 </div>
-
-    <div class="post">
-        <a href="yogasayfa.html">
-        <img src="img/yoga.jpg">
-        <h2>Yoga</h2>
-        <p>Hindistan’da ortaya çıkan ve Sanskritçede ‘bütünleşme’ anlamına gelen yoga, fiziksel
-            faydalarının yanı sıra ruhu ve zihni dinlendirmesi ile biliniyor. Farklı kas gruplarını
-            çalıştıran duruşlar ve doğru nefes alma üzerine kurulu olan yoga, farklı ders
-            alternatifleri ile tam senlik.</p></a>
-</div>
-</div>
-</div>
+<br><br><br><br><br>
 
   
 </div>

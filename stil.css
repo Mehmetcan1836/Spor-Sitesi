@@ -1019,3 +1019,24 @@ font-size: 40px;
     transition: all 0.3s ease;
     z-index: 2;
 }
+.sporsalonları{
+    padding-top: 100px;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobil uyumlu olması için */
+    text-align: center;
+    padding-bottom: 100px;
+}
+.sporsalonları h3{
+    font-size: 60px;
+      font-weight: 800;
+      margin: 20px 0;
+      line-height: 1.2;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.navigasyon{
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobil uyumlu olması için */
+    text-align: center;
+}
