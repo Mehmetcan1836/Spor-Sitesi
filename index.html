@@ -9,6 +9,33 @@
     <link rel="icon" type="image/png" href="img/logo.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+<style>
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      pointer-events: none; /* Etkileşimi engeller */
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      text-align: center;
+      pointer-events: none; /* Yazı da tıklanamaz */
+    }
+</style>
 <body>
     <br>
     <div class="container">
@@ -96,37 +123,37 @@
 </div>
 <div class="kulupvestudyolar">
     
-    <div class="photo">
+    <div class="photoss">
         <img src="img/macone.webp" alt="">
         <h3>Topluluklar</h3>
         <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
         <a href="#">En Yakın Kulübü Bul</a>
     </div>
-    <div class="photo">
+    <div class="photoss">
         <img src="img/macfit.webp" alt="">
         <h3>Topluluklar</h3>
         <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
         <a href="#">En Yakın Kulübü Bul</a>
     </div>
-    <div class="photo">
+    <div class="photoss">
         <img src="img/mac_boxing.webp" alt="">
         <h3>Topluluklar</h3>
         <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
         <a href="#">En Yakın Kulübü Bul</a>
     </div>
-    <div class="photo">
+    <div class="photoss">
         <img src="img/mac_hiit.webp" alt="">
         <h3>Topluluklar</h3>
         <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
         <a href="#">En Yakın Kulübü Bul</a>
     </div>
-    <div class="photo">
+    <div class="photoss">
         <img src="img/MACStudio_Pilates.webp" alt="">
         <h3>Topluluklar</h3>
         <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
         <a href="#">En Yakın Kulübü Bul</a>
     </div>
-    <div class="photo">
+    <div class="photoss">
         <img src="img/MACStudio_Beach.webp" alt="">
         <h3>Topluluklar</h3>
         <p>Farklı ilgi alanlarına sahip öğrenci toplulukları.</p>
@@ -134,6 +161,44 @@
     </div>
 
 </div>
+<div class="thegymmobil">
+    <div class="thegymyazi">
+    <p>THEGYM+ MOBİL İLE HER YERDE SPOR</p>
+    <h3>THEGYM+ İLE SPOR HER ZAMAN YANINDA!</h3>
+    <button>UYGULAMAYI KEŞFET</button></div>
+    <div class="macplus-container">
+    <div class="macplus-text">
+        <div class="macplus-box" data-image="img/macplus2.jpg">
+            <h3>THEGYM+ ile Benzersiz Bir Spor Deneyimi Seni Bekliyor!</h3>
+            <p>Hayatının her anında spora, fit olmaya ve iyi yaşamaya inanıyorsan doğru yerdesin.</p>
+        </div>
+        <div class="macplus-box" data-image="img/macplus1.jpg">
+            <h3>Geniş Egzersiz Kütüphanesi</h3>
+            <p>Yüzlerce THEGYM+ içeriği keşfetmen için seni bekliyor. Sana en uygun içeriği seç ve hedeflerine kolayca ulaş!</p>
+        </div>
+        <div class="macplus-box" data-image="img/macplus3.jpg">
+            <h3>Antrenman Programları</h3>
+            <p><strong>Her hedefe ve seviyeye özel antrenman programları THEGYM+ ile seninle.</strong> Dilersen günlük antrenmanlar, dilersen hedefe yönelik programlar ile hedeflerine çok yakınsın.</p>
+        </div>
+        <div class="macplus-stores">
+            <a href="https://www.apple.com/tr/app-store/" target="_blank">
+            <img src="img/appstore.png"  alt="App Store" /></a>
+            <a href="https://play.google.com/store/apps?hl=tr" target="_blank">
+            <img src="img/googleplay.png" alt="Google Play" /></a>
+        </div>
+    </div>
+    <div class="macplus-phone-frame">
+        <img src="img/frame.webp" alt="Telefon Çerçevesi" class="phone-frame" />
+        <img id="macplusScreenImage" src="img/macplus2.jpg" alt="MAC Plus Ekran" class="screen-image" />
+    </div>
+</div>
+
+
+
+
+</div>
+
+
 <div class="baslık"><h1>ÜCRET TABLOSU</h1></div>
 <div class="ucret">
 
@@ -202,7 +267,7 @@
 
   
 </div>
-<div id="cookie-banner" class="cookie-banner">
+<!--<div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
         <p>
             Sitemizi kullanarak çerezleri kabul etmiş oluyorsunuz. <a href="/cerez-politikasi">Çerez Politikamızı</a> inceleyebilirsiniz.
@@ -212,7 +277,7 @@
             <button id="reject-cookies" class="cookie-btn reject">Reddet</button>
         </div>
     </div>
-</div>
+</div>-->
 
 <script>
     document.getElementById('accept-cookies').addEventListener('click', function() {

@@ -857,11 +857,32 @@
       line-height: 1.2;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.photo a{
+.photoss a{
     color: #b01030;
     text-decoration: none;
-    
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.photoss img {
+    height: auto;
+    width: 100%;
+}
+
+.photoss h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 800;
+    line-height: 1.2;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.photoss p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 10px;
 }
 .kulupvestudyolaryazı button{
     display: inline-block;
@@ -876,4 +897,125 @@
       margin-top: 20px;
       transition: background-color 0.3s;
       cursor: pointer;
+}
+.thegymmobil {
+    padding-top: 40px;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobil uyumlu olması için */
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.thegymmobil .thegymyazi p{
+    font-size: 14px;
+      letter-spacing: 1.5px;
+      color: #111;
+      font-weight: 600;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.thegymmobil .thegymyazi h3{
+font-size: 40px;
+      font-weight: 800;
+      margin: 20px 0;
+      line-height: 1.2;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.thegymmobil .thegymyazi button{
+    display: inline-block;
+      background-color: #e30613;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+}
+
+.macplus-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #f8f9fc;
+    position: relative; /* Ekstra güvenlik */
+    z-index: 1;
+}
+
+.macplus-text {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.macplus-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.macplus-box:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.macplus-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.macplus-box p {
+    font-size: 16px;
+    color: #636366;
+    line-height: 1.5;
+}
+
+.macplus-stores {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.macplus-stores img {
+    height: 50px;
+    cursor: pointer;
+}
+
+.macplus-phone-frame {
+    position: relative;
+    width: 260px;
+    height: 630px;
+}
+
+.phone-frame {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.screen-image {
+    position: absolute;
+    top: 1%;
+    left: 5.9%;
+    width: 87%;
+    height: 81%;
+    border-radius: 30px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 2;
 }
