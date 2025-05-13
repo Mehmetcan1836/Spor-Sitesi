@@ -51,10 +51,13 @@
     align-items: center;
     background-color: white;
     height: 80px;
-    padding: 0 20px; 
-    position: sticky;
+    padding: 0 20px;
+    position: fixed; /* Sabit navbar için fixed */
     top: 0;
-    z-index: 999;
+    left: 0;
+    width: 100%; /* Tüm ekran genişliği */
+    z-index: 9999; /* Diğer içeriklerin üstünde */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge ekleyerek öne çıkar */
 }
 
   
@@ -67,7 +70,7 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1000;
   }
   
   .bar {
@@ -109,16 +112,16 @@
   
     .nav-links {
       position: fixed;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      transition: right 0.4s ease-in-out;
+        top: 80px;
+        right: -100%;
+        height: calc(100vh - 80px);
+        width: 200px;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+        transition: right 0.3s ease;
     }
   
     .nav-links.active {
@@ -225,10 +228,11 @@
 
 .sayfa2 h1{
     color: rgb(0, 0, 0);
-    font-size: 50px;
     font-weight: bold;
     font-family: sans-serif;
     text-align: center;
+    font-size: 40px;
+    font-weight: 800;
 }
 
 .sayfa2 h2{
@@ -238,6 +242,7 @@
     font-weight: bold;
     font-family: sans-serif;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 
@@ -794,4 +799,81 @@
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 9px gray;
     background-color: white;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobil uyumlu olması için */
+    text-align: center;
+}
+
+.photo img {
+    height: auto;
+}
+
+.photo h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 800;
+    line-height: 1.2;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.photo p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.kulupvestudyolar{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobil uyumlu olması için */
+    text-align: center;
+}
+.kulupvestudyolaryazı{
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobil uyumlu olması için */
+    text-align: center;
+    padding-bottom: 30px;
+}
+.kulupvestudyolaryazı p {
+    font-size: 14px;
+      letter-spacing: 1.5px;
+      color: #111;
+      font-weight: 600;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.kulupvestudyolaryazı h3{
+    font-size: 40px;
+      font-weight: 800;
+      margin: 20px 0;
+      line-height: 1.2;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.photo a{
+    color: #b01030;
+    text-decoration: none;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.kulupvestudyolaryazı button{
+    display: inline-block;
+      background-color: #e30613;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+      cursor: pointer;
 }
