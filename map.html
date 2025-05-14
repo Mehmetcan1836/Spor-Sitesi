@@ -58,6 +58,11 @@
             <li><a href="#" class="active">BİZE KATIL</a></li>
         </ul>
     </nav>
+    <div class="home">
+            <a href="index.html">
+            <div class="home-cubugu">
+                <img src="img/home.png"></div></a>
+        </div>
 <div id="sidebar">
     <h2>Lokasyonlar</h2>
     <div id="locations-list"></div>
@@ -112,11 +117,11 @@
                 <h3>${loc.name}</h3>
                 <p>${loc.description}</p>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}" target="_blank" style="background:green;color:white;padding:5px 10px;border-radius:5px;text-decoration:none;">Yol Tarifi Al</a><br><br>
-                <a href="detay.html?id=${loc.id}" target="_blank" style="background:#007BFF;color:white;padding:5px 10px;border-radius:5px;text-decoration:none;">Detayları Gör</a>
+                <a href="detay.html?id=${loc.id}" style="background:#007BFF;color:white;padding:5px 10px;border-radius:5px;text-decoration:none;">Detayları Gör</a>
             </div>
         `;
     }
 </script>
-
+<script src="script.js"></script>  
 </body>
 </html>

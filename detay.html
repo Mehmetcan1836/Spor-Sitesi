@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="stil.css">
     <style>
         body { margin: 0; font-family: Arial, sans-serif; }
-        #map { height: 300px; }
+        #map { height: 500px; }
         .container {
             padding: 20px;
         }
@@ -26,7 +27,36 @@
     </style>
 </head>
 <body>
-
+<nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="kulüpler.html">KULÜPLER</a></li>
+            <li><a href="hareketlersayfası.html">HAREKETLER</a></li>
+            <li><a href="hakkımızda.html">HAKKIMIZDA</a></li>
+            <li><a href="hizmetler.html">HİZMETLER</a></li>
+            <li><a href="iletişim.html">İLETİŞİM</a></li>
+            <li><a href="https://garemtal.meb.k12.tr" target="_blank" class="active">GARAMTEL</a></li>
+            <ol class="ol">|</ol>
+            <li><a href="kullanıcıkayıt.html" >KULLANICI GİRİŞİ</a></li>
+            <li><a href="#" class="active">BİZE KATIL</a></li>
+        </ul>
+    </nav>
+    <div class="home">
+            <a href="index.html">
+            <div class="home-cubugu">
+                <img src="img/home.png"></div></a>
+        </div>
 <div id="map"></div>
 <div class="container" id="details">
     <h2>Yükleniyor...</h2>
@@ -57,7 +87,7 @@
             <h1>${loc.name}</h1>
             <p>${loc.description}</p>
             <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}" target="_blank">Yol Tarifi Al</a>
-            <a class="btn btn-secondary" href="index.html">Haritaya Geri Dön</a>
+            <a class="btn btn-secondary" href="map.html">Haritaya Geri Dön</a>
         `;
 
         const map = L.map('map').setView([loc.lat, loc.lng], 15);

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -18,8 +19,7 @@
 
 
 .container {
-    width: 100%; 
-    max-width: 1200px; 
+    width: 100%;  
     margin: 0 auto; 
     overflow: hidden; 
     border-radius: 60px;
@@ -207,9 +207,9 @@
     transition: 0.5s;
 }
 
-:disabled
-.buttons button:hover{
+.buttons button:disabled:hover {
     background: #f3f3f3;
+    cursor: not-allowed;
 }
 
 
@@ -539,17 +539,26 @@
 
 .home {
     position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100px;
-    height: 190%;
+    left: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #DC143C;
+    color: white;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    z-index: 2;
-  }
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+.home:hover {
+    background-color: #b01030;
+}
   
   .home-cubugu {
     background-color: white;
@@ -1040,3 +1049,18 @@ font-size: 40px;
     flex-wrap: wrap; /* Mobil uyumlu olması için */
     text-align: center;
 }
+.filter-bar {
+        margin: 70px;
+        background: white;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .filter-bar select,
+    .filter-bar input {
+        padding: 10px;
+        font-size: 14px;
+    }
