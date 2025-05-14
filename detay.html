@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lokasyon Detayı</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        #map { height: 300px; }
+        .container {
+            padding: 20px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-secondary {
+            background: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+<div class="container" id="details">
+    <h2>Yükleniyor...</h2>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = parseInt(urlParams.get('id'));
+
+    if (!id) {
+        document.getElementById('details').innerHTML = "<h2>Lokasyon ID bulunamadı.</h2>";
+    } else {
+        fetch('locations.json')
+            .then(response => response.json())
+            .then(locations => {
+                const loc = locations.find(l => l.id === id);
+                if (loc) {
+                    showDetails(loc);
+                } else {
+                    document.getElementById('details').innerHTML = "<h2>Lokasyon bulunamadı.</h2>";
+                }
+            });
+    }
+
+    function showDetails(loc) {
+        document.getElementById('details').innerHTML = `
+            <h1>${loc.name}</h1>
+            <p>${loc.description}</p>
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}" target="_blank">Yol Tarifi Al</a>
+            <a class="btn btn-secondary" href="index.html">Haritaya Geri Dön</a>
+        `;
+
+        const map = L.map('map').setView([loc.lat, loc.lng], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+        L.marker([loc.lat, loc.lng]).addTo(map)
+            .bindPopup(`<strong>${loc.name}</strong><br>${loc.description}`).openPopup();
+    }
+</script>
+
+</body>
+</html>
