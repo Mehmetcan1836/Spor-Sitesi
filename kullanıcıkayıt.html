@@ -32,7 +32,7 @@
                     <li><a href="iletişim.html">İLETİŞİM</a></li>
                     <li><a href="https://garemtal.meb.k12.tr" target="_blank" class="active">GARAMTEL</a></li>
                     <ol class="ol">|</ol>
-                    <li><a href="kullanıcıkayıt.html" class="active">KULLANICI GİRİŞİ</a></li>
+                    <li><a href="#" class="active" id="userProfileLink">KULLANICI GİRİŞİ</a></li>
                     <li><a href="#" class="active">BİZE KATIL</a></li>
                 </ul>
             </nav>
@@ -50,14 +50,19 @@
                 <center>
                     <form class="kullanicigiris" id="userForm"><br><br>
                         <h2 id="formTitle">Üye Ol</h2><br>
-                        <label for="name">Ad Soyad:</label>
-                        <input type="text" id="name" name="name" required>
+                        <div id="nameGroup">
+                            <label for="name">Ad Soyad:</label>
+                            <input type="text" id="name" name="name" required minlength="2">
+                            <div class="error" id="nameError"></div>
+                        </div>
 
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="error" id="emailError"></div>
 
                         <label for="password">Şifre:</label>
-                        <input type="password" id="password" name="password" required><br>
+                        <input type="password" id="password" name="password" required minlength="8">
+                        <div class="error" id="passwordError"></div><br>
 
                         <button type="submit" id="submitButton">Kayıt Ol</button>
 
@@ -74,17 +79,22 @@
     <script>
         let isLoginMode = false;
 
-        function toggleMode() {
-            isLoginMode = !isLoginMode;
+        function updateFormDisplay() {
             document.getElementById("formTitle").textContent = isLoginMode ? "Giriş Yap" : "Üye Ol";
             document.getElementById("submitButton").textContent = isLoginMode ? "Giriş Yap" : "Kayıt Ol";
             document.getElementById("switchText").textContent = isLoginMode
                 ? "Hesabın yok mu?"
                 : "Zaten hesabın var mı?";
-
-            
-            document.getElementById("name").style.display = isLoginMode ? "none" : "block";
+            document.getElementById("nameGroup").style.display = isLoginMode ? "none" : "block";
         }
+
+        function toggleMode() {
+            isLoginMode = !isLoginMode;
+            updateFormDisplay();
+        }
+
+        // Sayfa yüklendiğinde form görünümünü ayarla
+        window.onload = updateFormDisplay;
 
         document.getElementById("userForm").addEventListener("submit", function (e) {
             e.preventDefault();
@@ -93,26 +103,67 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
+            // Hataları kontrol et
+            let hasError = false;
+
+            if (!isLoginMode && name.trim() === "") {
+                document.getElementById("nameError").textContent = "Ad soyad boş bırakılamaz!";
+                hasError = true;
+            } else {
+                document.getElementById("nameError").textContent = "";
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                document.getElementById("emailError").textContent = "Email adresi hatalı!";
+                hasError = true;
+            } else {
+                document.getElementById("emailError").textContent = "";
+            }
+
+            if (password.length < 8) {
+                document.getElementById("passwordError").textContent = "Şifre en az 8 karakter olmalıdır!";
+                hasError = true;
+            } else {
+                document.getElementById("passwordError").textContent = "";
+            }
+
+            if (hasError) {
+                return; // Hata varsa işlemi durdur
+            }
+
+            // localStorage'dan kullanıcıları al
+            let users = JSON.parse(localStorage.getItem('users') || '[]');
+
             if (isLoginMode) {
-                
-                const savedUser = JSON.parse(localStorage.getItem("user"));
-                if (savedUser && savedUser.email === email && savedUser.password === password) {
-                    alert("Giriş başarılı! Hoş geldin " + savedUser.name);
+                // Giriş işlemi
+                const user = users.find(u => u.email === email && u.password === password);
+                if (user) {
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    alert("Giriş başarılı! Hoş geldin " + user.name);
+                    window.location.href = "profil.html";
                 } else {
                     alert("Email veya şifre hatalı!");
                 }
             } else {
-                
-                const user = { name, email, password };
-                localStorage.setItem("user", JSON.stringify(user));
-                alert("Kayıt başarılı! Giriş yapabilirsiniz.");
-                toggleMode();
+                // Kayıt işlemi
+                // Email kontrolü
+                if (users.some(u => u.email === email)) {
+                    alert("Bu email adresi zaten kayıtlı!");
+                    return;
+                }
+
+                const newUser = { name, email, password };
+                users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(users));
+                alert("Kayıt başarılı! Otomatik giriş yapılıyor...");
+                // Kayıt olan kullanıcıyı direkt giriş yaptır
+                localStorage.setItem('currentUser', JSON.stringify(newUser));
+                window.location.href = "profil.html";
             }
 
-            
             document.getElementById("userForm").reset();
         });
     </script>
-    <script src="script.js"></script>  
+    <script src="script.js"></script>  <script src="auth.js"></script>
 </body>
 </html>

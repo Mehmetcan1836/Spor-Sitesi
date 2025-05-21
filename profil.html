@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THEGYM | Profil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stil.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container7">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="kulüpler.html">KULÜPLER</a></li>
+                    <li><a href="hareketlersayfası.html">HAREKETLER <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="hakkımızda.html">HAKKIMIZDA</a></li>
+                    <li><a href="hizmetler.html">HİZMETLER</a></li>
+                    <li><a href="iletişim.html">İLETİŞİM</a></li>
+                    <li><a href="https://garemtal.meb.k12.tr" target="_blank" class="active">GARAMTEL</a></li>
+                    <ol class="ol">|</ol>
+                    <li><a href="#" class="active" id="userProfileLink"></a></li>
+                    <li><a href="#" class="active">BİZE KATIL</a></li>
+                </ul>
+            </nav>
+            <div class="home">
+                <a href="index.html">
+                    <div class="home-cubugu">
+                        <img src="img/home.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <h2>Profil Bilgileri</h2>
+                    <button onclick="logout()" class="logout-btn">Çıkış Yap</button>
+                </div>
+                <div class="profile-info">
+                    <p><strong>Ad Soyad:</strong> <span id="profileName"></span></p>
+                    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Kullanıcı bilgilerini kontrol et ve göster
+        window.onload = function() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                window.location.href = 'kullanıcıkayıt.html';
+                return;
+            }
+
+            document.getElementById('profileName').textContent = currentUser.name;
+            document.getElementById('profileEmail').textContent = currentUser.email;
+            document.getElementById('userProfileLink').textContent = currentUser.name;
+        };
+
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

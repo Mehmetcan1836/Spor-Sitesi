@@ -1,11 +1,18 @@
-  const menuToggle = document.getElementById('mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
+  // Mobile menu functionality
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-    const boxes = document.querySelectorAll('.macplus-box');
-    const screenImage = document.getElementById('macplusScreenImage');
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+
+// MAC Plus image functionality
+const screenImage = document.getElementById('macplusScreenImage');
+const boxes = document.querySelectorAll('.macplus-box');
+
+if (screenImage && boxes.length > 0) {
     const originalScreen = screenImage.src;
 
     boxes.forEach(box => {
@@ -17,5 +24,4 @@
             screenImage.src = originalScreen;
         });
     });
-
-    
+}
