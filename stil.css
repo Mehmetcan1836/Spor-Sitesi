@@ -1063,6 +1063,7 @@ font-size: 40px;
         font-size: 14px;
     }
 .footer {
+    background-color: #dddddd3b;
     color: rgb(0, 0, 0);
     padding: 20px;
 }
