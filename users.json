@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "name": "Admin",
+        "email": "admin@thegym.com",
+        "password": "admin123",
+        "isAdmin": true
+    }
+]
