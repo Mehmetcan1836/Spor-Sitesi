@@ -65,6 +65,7 @@
   font-weight: bold;
   padding: 0 20px;
 }
+
 </style>
 <body>
     <br>
@@ -109,22 +110,26 @@
 <div class="filter-bar">
 <select id="sehirSelect">
   <option value="">Tüm Şehirler</option>
-  <option value="istanbul">İstanbul</option>
+  <option value="adana">Adana</option>
   <option value="ankara">Ankara</option>
+  <option value="istanbul">İstanbul</option>
   <option value="izmir">İzmir</option>
 </select>
-<select>
-    <option>Tüm İlçeler</option>
-    <option>01 Burda</option>
-    <option>Optimum</option>
-    <option>Balgat</option>
+
+<select id="ilceSelect">
+  <option value="">Tüm İlçeler</option>
+  <option value="optimum">Optimum</option>
+  <option value="balgat">Balgat</option>
+  <option value="01 burda">01 Burda</option>
 </select>
-<select>
-    <option>Tüm İmkanlar</option>
-    <option>Havlu</option>
-    <option>Sauna</option>
-    <option>Hamam</option>
-    <option>Spa</option>
+
+<select id="imkanSelect">
+  <option value="">Tüm İmkanlar</option>
+  <option value="hamam">Hamam</option>
+  <option value="havlu">Havlu</option>
+  <option value="havuz">Havuz</option>
+  <option value="sauna">Sauna</option>
+  <option value="spa">Spa</option>
 </select>
 
     <input type="text" placeholder="Kulüp Adı">
@@ -135,56 +140,135 @@
     <h3>SPOR SALONLARI VE STÜDYOLAR</h3>
 </div>
 <div class="kulupvestudyolar">
-    
-    <div class="photoss" data-city="Adana" data-district="01 Burda" data-facilities="Havlu, Sauna" data-name="ADANA 01 BURDA">
-    <a href="">
-    <img src="img/macone.webp" alt="">
-    <h3>ADANA 01 BURDA</h3>
-    <a href="#">SPOR SALONU DETAYI</a>
-</div>
-<div class="photoss" data-city="Adana" data-district="Optimum" data-facilities="Hamam, Havuz" data-name="ADANA OPTIMUM">
-    <a href="">
-    <img src="img/macfit.webp" alt="">
-    <h3>ADANA OPTIMUM</h3>
-    <a href="#">SPOR SALONU DETAYI</a>
-</div>
-<div class="photoss" data-city="Ankara" data-district="Balgat" data-facilities="Spa, Hamam" data-name="BALGAT NEV 201">
-    <a href="">
-    <img src="img/mac_hiit.webp" alt="">
-    <h3>BALGAT NEV 201</h3>
-    <a href="#">SPOR SALONU DETAYI</a>
-</div>
-
-    
-
+  <div id="kulupKutulari" class="photo-container"></div>
 </div>
 <br><br><br><br><br>
 
   
 </div>
-<!--<div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-        <p>
-            Sitemizi kullanarak çerezleri kabul etmiş oluyorsunuz. <a href="/cerez-politikasi">Çerez Politikamızı</a> inceleyebilirsiniz.
-        </p>
-        <div class="cookie-buttons">
-            <button id="accept-cookies" class="cookie-btn accept">Kabul Et</button>
-            <button id="reject-cookies" class="cookie-btn reject">Reddet</button>
-        </div>
-    </div>
-</div>-->
 
 <script>
-    document.getElementById('accept-cookies').addEventListener('click', function() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        
+    fetch("data.json")
+  .then(res => {
+    if (!res.ok) throw new Error("JSON yüklenemedi");
+    return res.json();
+  })
+  .then(veriler => {
+    const container = document.getElementById("kulupKutulari");
+
+    veriler.forEach(kulup => {
+      const div = document.createElement("div");
+      div.classList.add("photoss");
+
+      div.dataset.city = kulup.sehir;
+      div.dataset.district = kulup.ilce;
+      div.dataset.facilities = kulup.olanaklar;
+      div.dataset.name = kulup.isim;
+      div.dataset.lat = kulup.lat;
+      div.dataset.lng = kulup.lng;
+      div.dataset.detaylink = kulup.detayLink;
+
+      div.innerHTML = `
+        <a href="#">
+          <img src="${kulup.resim}" alt="${kulup.isim}">
+          <h3>${kulup.isim}</h3>
+        </a>
+        <a href="${kulup.detayLink}">SPOR SALONU DETAYI</a>
+      `;
+
+      div.addEventListener("click", () => {
+        const secilenKulup = {
+          isim: div.dataset.name,
+          sehir: div.dataset.city,
+          ilce: div.dataset.district,
+          lat: parseFloat(div.dataset.lat),
+          lng: parseFloat(div.dataset.lng),
+          detayLink: div.dataset.detaylink
+        };
+        localStorage.setItem("secilenKulup", JSON.stringify(secilenKulup));
+        window.location.href = "map.html";
+      });
+
+      container.appendChild(div);
     });
 
-    document.getElementById('reject-cookies').addEventListener('click', function() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        
-    });
+    filtrele();
+  })
+  .catch(err => {
+    console.error("Hata:", err);
+  });
+const sehirSelect = document.getElementById("sehirSelect");
+const ilceSelect = document.getElementById("ilceSelect");
+const imkanSelect = document.getElementById("imkanSelect");
+const isimInput = document.querySelector(".filter-bar input[type='text']");
+const kulupKutulari = document.getElementById("kulupKutulari");
+
+function filtrele() {
+  const secilenSehir = sehirSelect.value.toLowerCase();
+  const secilenIlce = ilceSelect.value.toLowerCase();
+  const secilenImkan = imkanSelect.value.toLowerCase();
+  const aranacakIsim = isimInput.value.toLowerCase();
+  
+
+  const kulupKutular = kulupKutulari.querySelectorAll(".photoss");
+
+    const filteredGyms = [];
+
+  kulupKutular.forEach(kulup => {
+    const kulupSehir = kulup.dataset.city.toLowerCase();
+    const kulupIlce = kulup.dataset.district.toLowerCase();
+    const kulupImkanlar = kulup.dataset.facilities.toLowerCase();
+    const kulupIsim = kulup.dataset.name.toLowerCase();
+
+    // Filtre koşulları
+    const sehirUygun = !secilenSehir || kulupSehir.includes(secilenSehir);
+    const ilceUygun = !secilenIlce || kulupIlce.includes(secilenIlce);
+    const imkanUygun = !secilenImkan || kulupImkanlar.includes(secilenImkan);
+    const isimUygun = !aranacakIsim || kulupIsim.includes(aranacakIsim);
+
+    if (sehirUygun && ilceUygun && imkanUygun && isimUygun) {
+      kulup.style.display = "block";
+    } else {
+      kulup.style.display = "none";
+    }
+    filteredGyms.push({
+        isim: kulup.dataset.name,
+        sehir: kulup.dataset.city,
+        ilce: kulup.dataset.district,
+        olanaklar: kulup.dataset.facilities,
+        lat: parseFloat(kulup.dataset.lat),   // dataset’te lat/lng varsa
+        lng: parseFloat(kulup.dataset.lng),
+        detayLink: kulup.dataset.detaylink || "#"
+      });
+      
+  });
+  localStorage.setItem("filteredGyms", JSON.stringify(filteredGyms));
+div.addEventListener("click", () => {
+  const secilenKulup = {
+    isim: div.dataset.name,
+    sehir: div.dataset.city,
+    ilce: div.dataset.district,
+    lat: parseFloat(div.dataset.lat),
+    lng: parseFloat(div.dataset.lng),
+    detayLink: div.dataset.detaylink
+  };
+  localStorage.setItem("secilenKulup", JSON.stringify(secilenKulup));
+  window.location.href = "map.html";
+});
+
+  
+}
+
+// Event listenerları ekle
+sehirSelect.addEventListener("change", filtrele);
+ilceSelect.addEventListener("change", filtrele);
+imkanSelect.addEventListener("change", filtrele);
+isimInput.addEventListener("input", filtrele);
+
+
+  
 </script>
+
 
 <script src="script.js"></script>  <script src="auth.js"></script>
 </body>

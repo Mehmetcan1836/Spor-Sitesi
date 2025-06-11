@@ -66,62 +66,148 @@
         </div>
 <div id="sidebar">
     <h2>Lokasyonlar</h2>
+    <input type="text" id="searchInput" placeholder="Lokasyon ara..." style="width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box;">
     <div id="locations-list"></div>
 </div>
+
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     const map = L.map('map').setView([41.0242, 29.0400], 13);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
 
-    const markers = {};
+const listContainer = document.getElementById("locations-list");
+const markers = [];
 
-    // JSON dosyasını yükle
-    fetch('locations.json')
-        .then(response => response.json())
-        .then(locations => {
-            const listContainer = document.getElementById("locations-list");
+// Liste ve marker ekleme fonksiyonu
+function addGymToListAndMap(gym) {
+  const index = markers.length;
 
-            locations.forEach(loc => {
-                // Sidebar item
-                const item = document.createElement("div");
-                item.className = "location-item";
-                item.innerHTML = `<strong>${loc.name}</strong><br>${loc.description}`;
-                item.addEventListener("click", () => {
-                    selectLocation(loc.id, locations);
-                });
-                listContainer.appendChild(item);
+  // Sidebar öğesi
+  const item = document.createElement("div");
+  item.className = "location-item";
+  item.innerHTML = `<strong>${gym.isim || gym.name}</strong><br>${gym.sehir || gym.city || ''} ${gym.ilce || gym.district || ''}`;
+  item.addEventListener("click", () => {
+    map.setView([gym.lat, gym.lng], 15);
+    setTimeout(() => {
+      markers[index].openPopup();
+    }, 300);
+  });
+  listContainer.appendChild(item);
 
-                // Marker
-                const marker = L.marker([loc.lat, loc.lng]).addTo(map);
-                marker.bindPopup(createPopupContent(loc));
-                markers[loc.id] = marker;
-            });
-        });
+  const gymName = gym.isim || gym.name || null;
 
-    function selectLocation(id, locations) {
-        const loc = locations.find(l => l.id === id);
-        if (loc) {
-            map.setView([loc.lat, loc.lng], 15);
-            markers[id].openPopup();
+  // Detay linki sadece isim varsa oluşturulsun
+  let detayLink = "#";
+  if (gym.detayLink) {
+    detayLink = gym.detayLink;
+  } else if (gymName) {
+    detayLink = 'detay.html?isim=' + encodeURIComponent(gymName);
+  } else {
+    // isim yoksa link yok ya da hata mesajı koyabilirsin
+    detayLink = "#"; 
+  }
+
+  // Marker
+  const marker = L.marker([gym.lat, gym.lng]).addTo(map);
+  marker.bindPopup(`
+  <div style="min-width:200px">
+    <h3>${gym.isim || gym.name}</h3>
+    <p>${gym.sehir || gym.city || ''} ${gym.ilce || gym.district || ''}</p>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=${gym.lat},${gym.lng}" target="_blank" style="background:green;color:white;padding:5px 10px;border-radius:5px;text-decoration:none;">Yol Tarifi Al</a><br><br>
+    <a href="${detayLink}" 
+       style="background:#007BFF;color:white;padding:5px 10px;border-radius:5px;text-decoration:none;" target="_blank">
+       Detayları Gör
+    </a>
+  </div>
+`);
+
+  markers.push(marker);
+}
+
+
+// Önce sidebar temizlenmeli
+listContainer.innerHTML = "";
+
+// LocalStorage'dan seçilen kulüp
+let secilenKulup = JSON.parse(localStorage.getItem("secilenKulup"));
+
+// Lat/Lng sayıya çevrilmedi ise çevir
+if (secilenKulup) {
+  secilenKulup.lat = parseFloat(secilenKulup.lat);
+  secilenKulup.lng = parseFloat(secilenKulup.lng);
+}
+
+// LocalStorage'dan filtrelenmiş kulüpler
+const filteredGyms = JSON.parse(localStorage.getItem("filteredGyms"));
+
+// Öncelikle seçilen kulüp varsa onu ekle ve haritayı oraya odakla
+if (secilenKulup && !isNaN(secilenKulup.lat) && !isNaN(secilenKulup.lng)) {
+  addGymToListAndMap(secilenKulup);
+  map.setView([secilenKulup.lat, secilenKulup.lng], 15);
+}
+
+// Daha sonra filtrelenmiş kulüpler varsa, onları ekle
+if (filteredGyms && filteredGyms.length > 0) {
+  filteredGyms.forEach(gym => {
+    // Seçilen kulüp zaten eklendi, onu tekrar eklemeyelim
+    if (!secilenKulup || gym.isim !== secilenKulup.isim) {
+      addGymToListAndMap(gym);
+    }
+  });
+} else {
+  // Filtrelenmiş yoksa tüm data.json'u çek ve ekle
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(gym => {
+        if (!secilenKulup || gym.isim !== secilenKulup.isim) {
+          addGymToListAndMap(gym);
         }
-    }
+      });
+    })
+    .catch(err => console.error("Veri yüklenirken hata:", err));
+}
 
-    function createPopupContent(loc) {
-        return `
-            <div style="min-width:200px">
-                <h3>${loc.name}</h3>
-                <p>${loc.description}</p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}" target="_blank" style="background:green;color:white;padding:5px 10px;border-radius:5px;text-decoration:none;">Yol Tarifi Al</a><br><br>
-                <a href="detay.html?id=${loc.id}" style="background:#007BFF;color:white;padding:5px 10px;border-radius:5px;text-decoration:none;">Detayları Gör</a>
-            </div>
-        `;
-    }
+// Eğer seçilen kulüp yoksa genel konuma ayarla
+if (!secilenKulup) {
+  map.setView([41.0242, 29.0400], 13);
+}
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    // Tüm lokasyon öğeleri
+    const locationItems = document.querySelectorAll(".location-item");
+
+    locationItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(searchTerm)) {
+            item.style.display = ""; // göster
+        } else {
+            item.style.display = "none"; // gizle
+        }
+    });
+
+    // İstersen, harita markerlarını da filtreleyebilirsin (opsiyonel)
+    markers.forEach((marker, idx) => {
+        const gym = filteredGyms ? filteredGyms[idx] : null;
+        const locName = gym ? (gym.isim || gym.name || "").toLowerCase() : "";
+        if (locName.includes(searchTerm)) {
+            marker.addTo(map);
+        } else {
+            map.removeLayer(marker);
+        }
+    });
+});
+
+
 </script>
 <script src="script.js"></script>  <script src="auth.js"></script>
 </body>

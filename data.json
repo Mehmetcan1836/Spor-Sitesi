@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "isim": "ADANA OPTIMUM",
+    "sehir": "Adana",
+    "ilce": "Optimum",
+    "olanaklar": "Hamam, Havuz",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 37.001,
+    "lng": 35.321
+  },
+  {
+    "id": 2,
+    "isim": "ANKARA BALGAT",
+    "sehir": "Ankara",
+    "ilce": "Balgat",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macone.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+  {
+    "id": 3,
+    "isim": "MAC/One Emaar Square",
+    "sehir": "Ankara",
+    "ilce": "Balgat",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+{
+    "id": 4,
+    "isim": "MACFit Çengelköy Park",
+    "sehir": "İstanbul",
+    "ilce": "Üsküdar",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+  {
+    "id": 5,
+    "isim": "MACFit Nevçarşı",
+    "sehir": "İstanbul",
+    "ilce": "Üsküdar",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+  {
+    "id": 6,
+    "isim": "MACFit Watergarden",
+    "sehir": "İstanbul",
+    "ilce": "Ümraniye",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+  {
+    "id": 7,
+    "isim": "MACFit Ümraniye Avrupa Konutları",
+    "sehir": "İstanbul",
+    "ilce": "Ümraniye",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+  {
+    "id": 8,
+    "isim": "MACFit Altunizade",
+    "sehir": "İstanbul",
+    "ilce": "Üsküdar",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+{
+    "id": 8,
+    "isim": "MACFit Buyaka",
+    "sehir": "İstanbul",
+    "ilce": "Ümraniye",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+  {
+    "id": 8,
+    "isim": "MACFit Akyaka Park",
+    "sehir": "İstanbul",
+    "ilce": "Ümraniye",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  },
+  {
+    "id": 8,
+    "isim": "MACFit Kazasker",
+    "sehir": "İstanbul",
+    "ilce": "Kadıköy",
+    "olanaklar": "Havlu, Sauna",
+    "resim": "img/macfit.webp",
+    "detayLink": "#",
+    "lat": 39.929,
+    "lng": 32.854
+  }
+]

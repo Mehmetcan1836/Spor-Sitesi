@@ -25,3 +25,5 @@ if (screenImage && boxes.length > 0) {
         });
     });
 }
+
+//kulüp ekleme jsonu

@@ -68,39 +68,49 @@
 <script src="auth.js"></script>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const id = parseInt(urlParams.get('id'));
+const isim = urlParams.get('isim');
 
-    if (!id) {
-        document.getElementById('details').innerHTML = "<h2>Lokasyon ID bulunamadı.</h2>";
-    } else {
-        fetch('locations.json')
-            .then(response => response.json())
-            .then(locations => {
-                const loc = locations.find(l => l.id === id);
-                if (loc) {
-                    showDetails(loc);
-                } else {
-                    document.getElementById('details').innerHTML = "<h2>Lokasyon bulunamadı.</h2>";
-                }
-            });
-    }
+if (!isim) {
+    document.getElementById('details').innerHTML = "<h2>Lokasyon ismi bulunamadı.</h2>";
+} else {
+    fetch('data.json')
+        .then(response => response.json())
+        .then(locations => {
+            const isimLower = isim.toLowerCase();
+            const loc = locations.find(l => 
+                (l.isim && l.isim.toLowerCase() === isimLower) || 
+                (l.name && l.name.toLowerCase() === isimLower)
+            );
+            if (loc) {
+                showDetails(loc);
+            } else {
+                document.getElementById('details').innerHTML = "<h2>Lokasyon bulunamadı.</h2>";
+            }
+        })
+        .catch(err => {
+            console.error("Veri yüklenirken hata:", err);
+            document.getElementById('details').innerHTML = "<h2>Veri yüklenirken hata oluştu.</h2>";
+        });
+}
 
-    function showDetails(loc) {
-        document.getElementById('details').innerHTML = `
-            <h1>${loc.name}</h1>
-            <p>${loc.description}</p>
-            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}" target="_blank">Yol Tarifi Al</a>
-            <a class="btn btn-secondary" href="map.html">Haritaya Geri Dön</a>
-        `;
+function showDetails(loc) {
+    document.getElementById('details').innerHTML = `
+        <h1>${loc.isim || loc.name}</h1>
+        <p>${loc.description || loc.aciklama || ''}</p>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}" target="_blank">Yol Tarifi Al</a>
+        <a class="btn btn-secondary" href="map.html">Haritaya Geri Dön</a>
+    `;
 
-        const map = L.map('map').setView([loc.lat, loc.lng], 15);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
-        L.marker([loc.lat, loc.lng]).addTo(map)
-            .bindPopup(`<strong>${loc.name}</strong><br>${loc.description}`).openPopup();
-    }
+    const map = L.map('map').setView([loc.lat, loc.lng], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+    L.marker([loc.lat, loc.lng]).addTo(map)
+        .bindPopup(`<strong>${loc.isim || loc.name}</strong><br>${loc.description || ''}`).openPopup();
+}
+
+
 </script>
 <script src="auth.js"></script>
 </body>
