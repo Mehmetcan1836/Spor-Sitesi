@@ -3,7 +3,7 @@
     "id": 1,
     "isim": "ADANA OPTIMUM",
     "sehir": "Adana",
-    "ilce": "Optimum",
+    "ilce": "Yuregir",
     "olanaklar": "Hamam, Havuz",
     "resim": "img/macfit.webp",
     "detayLink": "#",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "isim": "MAC/One Emaar Square",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Üsküdar",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
@@ -35,7 +35,7 @@
 {
     "id": 4,
     "isim": "MACFit Çengelköy Park",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Üsküdar",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
@@ -46,18 +46,18 @@
   {
     "id": 5,
     "isim": "MACFit Nevçarşı",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Üsküdar",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 41.020,
-    "lng": 28.980
+    "lat": 41.017,
+    "lng": 29.029
   },
   {
     "id": 6,
     "isim": "MACFit Watergarden",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Ümraniye",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "isim": "MACFit Ümraniye Avrupa Konutları",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Ümraniye",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "isim": "MACFit Altunizade",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Üsküdar",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
@@ -90,7 +90,7 @@
 {
     "id": 8,
     "isim": "MACFit Buyaka",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Ümraniye",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
@@ -101,7 +101,7 @@
   {
     "id": 8,
     "isim": "MACFit Akyaka Park",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Ümraniye",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
@@ -112,7 +112,7 @@
   {
     "id": 8,
     "isim": "MACFit Kazasker",
-    "sehir": "İstanbul",
+    "sehir": "Istanbul",
     "ilce": "Kadıköy",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
