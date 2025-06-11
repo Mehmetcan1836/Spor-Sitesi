@@ -24,13 +24,13 @@
   {
     "id": 3,
     "isim": "MAC/One Emaar Square",
-    "sehir": "Ankara",
-    "ilce": "Balgat",
+    "sehir": "İstanbul",
+    "ilce": "Üsküdar",
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 41.008,
+    "lng": 29.069
   },
 {
     "id": 4,
@@ -40,8 +40,8 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 41.041,
+    "lng": 29.033
   },
   {
     "id": 5,
@@ -51,8 +51,8 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 41.020,
+    "lng": 28.980
   },
   {
     "id": 6,
@@ -62,8 +62,8 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 40.998,
+    "lng": 29.058
   },
   {
     "id": 7,
@@ -73,8 +73,8 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 41.024,
+    "lng": 29.071
   },
   {
     "id": 8,
@@ -84,8 +84,8 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 41.018,
+    "lng": 29.046
   },
 {
     "id": 8,
@@ -95,8 +95,8 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 41.026,
+    "lng": 29.084
   },
   {
     "id": 8,
@@ -106,8 +106,8 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 41.032,
+    "lng": 29.072
   },
   {
     "id": 8,
@@ -117,7 +117,7 @@
     "olanaklar": "Havlu, Sauna",
     "resim": "img/macfit.webp",
     "detayLink": "#",
-    "lat": 39.929,
-    "lng": 32.854
+    "lat": 40.972,
+    "lng": 29.042
   }
 ]
