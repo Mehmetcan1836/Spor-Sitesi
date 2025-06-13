@@ -1050,12 +1050,12 @@ font-size: 40px;
     z-index: 2;
 }
 .sporsalonları{
-    padding-top: 100px;
+    padding-top: 200px;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap; /* Mobil uyumlu olması için */
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 .sporsalonları h3{
     font-size: 60px;
